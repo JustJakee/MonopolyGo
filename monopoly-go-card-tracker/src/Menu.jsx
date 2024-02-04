@@ -4,9 +4,11 @@ import InputGroup from 'react-bootstrap/InputGroup';
 
 function Menu() {
     return (
-        <Accordion className="mx-5 mt-5 mb-5">
+        <div className="div-menu">
+        <Accordion className="mx-5 mb-5">
             <Accordion.Item eventKey="0">
                 <Accordion.Header>
+                    <ProgressBar now={60} />
                     Best Beginnings
                 </Accordion.Header>
                 <Accordion.Body>
@@ -194,6 +196,7 @@ function Menu() {
                 </Accordion.Body>
             </Accordion.Item>
         </Accordion>
+        </div>
     );
 }
 
