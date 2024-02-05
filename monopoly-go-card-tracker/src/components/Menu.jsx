@@ -5,7 +5,7 @@ import InputGroup from 'react-bootstrap/InputGroup';
 function Menu() {
     return (
         <div className="div-menu">
-        <Accordion className="mx-5 mb-5">
+        <Accordion className="mx-5 pb-5">
             <Accordion.Item eventKey="0">
                 <Accordion.Header>
                     <ProgressBar now={60} />

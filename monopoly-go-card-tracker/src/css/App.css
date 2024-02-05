@@ -1,0 +1,47 @@
+.App {
+  text-align: center;
+  background-color: #bdefd7;
+}
+
+/* .accordion {
+  --bs-accordion-color: ;
+} */
+
+.div-menu {
+  padding-top: 20px;
+}
+
+.footer {
+  padding-bottom: 30px;
+}
+
+.header{
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+.headerImage{
+  padding-top: 3%;
+  padding-left: 15%;
+  padding-right: 15%;
+}
+
+.headerCountDown{
+  padding-top: 4%;
+}
+
+.headerProgressBar{
+  padding-top: 5%;
+  padding-right: 10%;
+}
+
+.headerValues{
+  padding-top: 20px;
+  padding-left: 5%;
+  padding-right: 10%;
+}
+
+.progress-bar{
+  background-color: #2dacde!important;
+}
+

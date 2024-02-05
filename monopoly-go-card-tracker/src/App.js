@@ -1,11 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
-import Menu from './Menu';
-import Footer from './Footer';
+import './css/App.css';
+import Menu from './components/Menu';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
 function App() {
   return (
     <div className="App">
+      <Header />
       <Menu />
       <Footer />
     </div>
