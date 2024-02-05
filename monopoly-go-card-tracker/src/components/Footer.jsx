@@ -1,4 +1,4 @@
-
+//Will add these in later - keeping the values here
 const linkedIn_profile = "https://www.linkedin.com/in/jbertish2020/"
 const github_profile = "https://github.com/JustJakee"
 
