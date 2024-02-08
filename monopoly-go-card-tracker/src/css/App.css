@@ -7,6 +7,10 @@
   --bs-accordion-color: ;
 } */
 
+.btn-primary{
+  background-color: grey;
+}
+
 .div-menu {
   padding-top: 20px;
 }
@@ -21,7 +25,7 @@
 }
 
 .headerImage{
-  padding-top: 3%;
+  padding-top: 1%;
   padding-left: 15%;
   padding-right: 15%;
 }
@@ -39,6 +43,10 @@
   padding-top: 20px;
   padding-left: 5%;
   padding-right: 10%;
+}
+
+.login{
+  padding-top: 2%;
 }
 
 .progress-bar{
