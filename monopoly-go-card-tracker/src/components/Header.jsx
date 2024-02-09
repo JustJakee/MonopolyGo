@@ -6,7 +6,7 @@ import Col from 'react-bootstrap/Col';
 
 const MONOPOLY_GO_LOGO = "https://monopoloygotracker.s3.us-east-2.amazonaws.com/MonopolyGoLogo.PNG"
 const examplePercent = 50;
-const examplePercentageString = `${examplePercent} / 100`;
+const examplePercentageString = `${examplePercent} / 189`;
 let seasonEndDate = new Date("03/28/2024");
 
 let currentDate = new Date();

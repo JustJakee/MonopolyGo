@@ -2,16 +2,21 @@ import { useState } from 'react';
 import { Accordion, ProgressBar, InputGroup, ToggleButton, Card } from 'react-bootstrap';
 
 function Menu() {
-    const [collected, setCollected] = useState(false);
+    const [buttonStates, setButtonStates] = useState(Array(189).fill(false));
+    const [progress, setProgress] = useState(0);
 
-    // TODO ADD DB FUNCTIONALITY
+    //TODO Progress Bar inside Accordion to track set progress
+    //TODO Share state with header to update the overall card tracker
 
-    // const handleToggle = async () => {
-    //   };
+    // Example here <ProgressBar now={calculateProgress()} label={`${calculateProgress()}%`} className="ml-auto" />
 
-    const handleToggle = () => {
-        setCollected(!collected);
+
+    const handleToggle = (index) => {
+        const newButtonStates = [...buttonStates];
+        newButtonStates[index] = !newButtonStates[index];
+        setButtonStates(newButtonStates);
     };
+    
 
     return (
         <div className="div-menu">
@@ -19,123 +24,113 @@ function Menu() {
                 <Accordion.Item eventKey="0">
                     <Accordion.Header>
                         Best Beginnings
-                        <ProgressBar now={60} />
                     </Accordion.Header>
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-0"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[0]}
+                                onChange={() => handleToggle(0)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[0] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Peek of the Past </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-1"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[1]}
+                                onChange={() => handleToggle(1)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[1] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Doggone It! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-2"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[2]}
+                                onChange={() => handleToggle(2)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[2] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Choo Choo! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-3"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[3]}
+                                onChange={() => handleToggle(3)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[3] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Just in Case </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-4"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[4]}
+                                onChange={() => handleToggle(4)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[4] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Community Goals </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-5"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[5]}
+                                onChange={() => handleToggle(5)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[5] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Child's Play </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-6"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[6]}
+                                onChange={() => handleToggle(6)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[6] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Missing Treasure </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-7"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[7]}
+                                onChange={() => handleToggle(7)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[7] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Lost & Found </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-8"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[8]}
+                                onChange={() => handleToggle(8)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[8] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Story Time </InputGroup.Text>
                         </InputGroup>
@@ -147,118 +142,111 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-9"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[9]}
+                                onChange={() => handleToggle(9)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[9] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Love At First Sight </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-10"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[10]}
+                                onChange={() => handleToggle(10)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[10] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Before Billions </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-11"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
+                                checked={buttonStates[11]}
                                 value={1}
-                                onChange={handleToggle}
+                                onChange={() => handleToggle(11)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[11] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Money-Minded </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-12"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[12]}
+                                onChange={() => handleToggle(12)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[12] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Master Plan </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-13"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[13]}
+                                onChange={() => handleToggle(13)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[13] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Moving On Up </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-14"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[14]}
+                                onChange={() => handleToggle(14)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[14] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Obsession </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-15"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
+                                checked={buttonStates[15]}
                                 value={1}
-                                onChange={handleToggle}
+                                onChange={() => handleToggle(15)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[15] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Rich! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-16"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[16]}
+                                onChange={() => handleToggle(16)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[16] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Long-Awaited </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-17"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[17]}
+                                onChange={() => handleToggle(17)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[17] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > The Top Hat </InputGroup.Text>
                         </InputGroup>
@@ -270,118 +258,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-18"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[18]}
+                                onChange={() => handleToggle(18)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[18] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > The Vision </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-19"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[19]}
+                                onChange={() => handleToggle(19)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[19] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Circle Back </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-20"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[20]}
+                                onChange={() => handleToggle(20)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[20] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Get The Point </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-21"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[21]}
+                                onChange={() => handleToggle(21)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[21] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Fun, Squared! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-22"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[22]}
+                                onChange={() => handleToggle(22)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[22] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > True Colors </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-23"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[23]}
+                                onChange={() => handleToggle(23)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[23] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Let's GO! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-24"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[24]}
+                                onChange={() => handleToggle(24)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[24] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Good Deeds </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-25"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[25]}
+                                onChange={() => handleToggle(25)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[25] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Throw the Dice </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-26"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[26]}
+                                onChange={() => handleToggle(26)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[26] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Across the Board </InputGroup.Text>
                         </InputGroup>
@@ -393,118 +372,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-27"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[27]}
+                                onChange={() => handleToggle(27)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[27] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Bark Voyage </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-28"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[28]}
+                                onChange={() => handleToggle(28)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[28] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > My Captain! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-29"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[29]}
+                                onChange={() => handleToggle(29)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[29] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Sonar Peek </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-30"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[30]}
+                                onChange={() => handleToggle(30)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[30] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > First Stop </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-31"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[31]}
+                                onChange={() => handleToggle(31)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[31] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Born to Fly </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-32"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[32]}
+                                onChange={() => handleToggle(32)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[32] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Map it Out </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-33"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[33]}
+                                onChange={() => handleToggle(33)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[33] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Adiós, Artic! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-34"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[34]}
+                                onChange={() => handleToggle(34)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[34] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Co-Captains </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-35"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[35]}
+                                onChange={() => handleToggle(35)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[35] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > The Battleship </InputGroup.Text>
                         </InputGroup>
@@ -516,118 +486,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-36"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[36]}
+                                onChange={() => handleToggle(36)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[36] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Whittling Whiz </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-37"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[37]}
+                                onChange={() => handleToggle(37)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[37] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > A Bit Wonky </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-38"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[38]}
+                                onChange={() => handleToggle(38)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[38] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Prototype </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[39]}
+                                onChange={() => handleToggle(39)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[39] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Fun, Squared! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-40"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[40]}
+                                onChange={() => handleToggle(40)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[40] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > The Pro </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-41"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[41]}
+                                onChange={() => handleToggle(41)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[41] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Dice-Bot 3000 </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-42"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[42]}
+                                onChange={() => handleToggle(42)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[42] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Dream Come True </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-43"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[43]}
+                                onChange={() => handleToggle(43)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[43] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Squared Joy </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-44"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[44]}
+                                onChange={() => handleToggle(44)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[44] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Perfect Pair </InputGroup.Text>
                         </InputGroup>
@@ -639,118 +600,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-45"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[45]}
+                                onChange={() => handleToggle(45)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[45] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Thimble Factory </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-46"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[46]}
+                                onChange={() => handleToggle(46)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[46] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > In-Line </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-47"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[47]}
+                                onChange={() => handleToggle(47)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[47] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Prized Possession </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-48"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[48]}
+                                onChange={() => handleToggle(48)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[48] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Jackpot! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-49"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[49]}
+                                onChange={() => handleToggle(49)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[49] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Lucky Charm </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-50"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[50]}
+                                onChange={() => handleToggle(50)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[50] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Bank Error! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-51"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[51]}
+                                onChange={() => handleToggle(51)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[51] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Finally First </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-52"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[52]}
+                                onChange={() => handleToggle(52)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[52] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Dividends </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-53"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[53]}
+                                onChange={() => handleToggle(53)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[53] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > The Thimble </InputGroup.Text>
                         </InputGroup>
@@ -762,118 +714,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-54"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[54]}
+                                onChange={() => handleToggle(54)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[54] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Adventure Time </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-55"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[55]}
+                                onChange={() => handleToggle(55)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[55] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > No Chance </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-56"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[56]}
+                                onChange={() => handleToggle(56)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[56] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Wrapped Up </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-57"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[57]}
+                                onChange={() => handleToggle(57)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[57] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Waterlogged </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[58]}
+                                onChange={() => handleToggle(58)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[58] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Jungle Clue </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-59"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[59]}
+                                onChange={() => handleToggle(59)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[59] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Enchanted </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-60"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[60]}
+                                onChange={() => handleToggle(60)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[60] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > To The Moon! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-61"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[61]}
+                                onChange={() => handleToggle(61)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[61] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Under Your Nose </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-62"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[62]}
+                                onChange={() => handleToggle(62)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[62] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Treasured Cards </InputGroup.Text>
                         </InputGroup>
@@ -885,118 +828,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-63"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[63]}
+                                onChange={() => handleToggle(63)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[63] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Antique Hunting </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-64"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[64]}
+                                onChange={() => handleToggle(64)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[64] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Here It Is! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-65"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[65]}
+                                onChange={() => handleToggle(65)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[65] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Memories </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-66"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[66]}
+                                onChange={() => handleToggle(66)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[66] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > In The Fire </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-67"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[67]}
+                                onChange={() => handleToggle(67)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[67] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Oops! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-67"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[67]}
+                                onChange={() => handleToggle(67)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[67] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Little Help </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-68"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[68]}
+                                onChange={() => handleToggle(68)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[68] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > New Iron! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-69"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[69]}
+                                onChange={() => handleToggle(69)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[69] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Token Factory </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-70"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[70]}
+                                onChange={() => handleToggle(70)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[70] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > The Iron </InputGroup.Text>
                         </InputGroup>
@@ -1008,118 +942,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-71"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[71]}
+                                onChange={() => handleToggle(71)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[71] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > A Good Sign! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-72"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[72]}
+                                onChange={() => handleToggle(72)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[72] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Blueprints </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-73"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[73]}
+                                onChange={() => handleToggle(73)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[73] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Globe Trottin' </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-74"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[74]}
+                                onChange={() => handleToggle(74)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[74] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Round-The-World </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-75"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[75]}
+                                onChange={() => handleToggle(75)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[75] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Palettable </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-76"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[76]}
+                                onChange={() => handleToggle(76)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[76] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Dirty Deeds </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-77"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[77]}
+                                onChange={() => handleToggle(77)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[77] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > First Try </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-78"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[78]}
+                                onChange={() => handleToggle(78)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[78] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Flood The Market </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-79"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[79]}
+                                onChange={() => handleToggle(79)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[79] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Room to Rent! </InputGroup.Text>
                         </InputGroup>
@@ -1131,118 +1056,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-80"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[80]}
+                                onChange={() => handleToggle(80)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[80] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Mr. M's Tale </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-81"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[81]}
+                                onChange={() => handleToggle(81)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[81] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Doing Chores </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-82"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[82]}
+                                onChange={() => handleToggle(82)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[82] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > The Boot Awards </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-83"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[83]}
+                                onChange={() => handleToggle(83)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[83] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Fashion Fiasco </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-84"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[84]}
+                                onChange={() => handleToggle(84)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[84] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Suit Up </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-85"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[85]}
+                                onChange={() => handleToggle(85)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[85] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > To The Awards </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-86"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[86]}
+                                onChange={() => handleToggle(86)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[86] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Nominees </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-87"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[87]}
+                                onChange={() => handleToggle(87)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[87] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Award Winner </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-88"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[88]}
+                                onChange={() => handleToggle(8)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[88] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > The Boot </InputGroup.Text>
                         </InputGroup>
@@ -1254,118 +1170,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-89"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[89]}
+                                onChange={() => handleToggle(89)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[89] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Paperwork Punt </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-90"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[90]}
+                                onChange={() => handleToggle(90)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[90] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Bills?! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-91"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[91]}
+                                onChange={() => handleToggle(91)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[91] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Not Today </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-92"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[92]}
+                                onChange={() => handleToggle(92)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[92] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Hands On! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-93"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[93]}
+                                onChange={() => handleToggle(93)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[93] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Nailing It! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-94"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[94]}
+                                onChange={() => handleToggle(94)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[94] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Electric Company </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-95"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[95]}
+                                onChange={() => handleToggle(95)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[95] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Water Works </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-96"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[96]}
+                                onChange={() => handleToggle(96)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[96] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Sparkling Fun </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-97"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[97]}
+                                onChange={() => handleToggle(97)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[97] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Making a Splash </InputGroup.Text>
                         </InputGroup>
@@ -1377,118 +1284,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-98"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[98]}
+                                onChange={() => handleToggle(98)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[98] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > MNPL Labs </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-99"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[99]}
+                                onChange={() => handleToggle(99)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[99] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Mr. Captain </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-100"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[100]}
+                                onChange={() => handleToggle(100)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[100] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Confetti Fun </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-101"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[101]}
+                                onChange={() => handleToggle(101)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[101] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > On the Ball </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-102"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[102]}
+                                onChange={() => handleToggle(102)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[102] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Cannonball </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-103"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[103]}
+                                onChange={() => handleToggle(103)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[103] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Throw the Dice </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-104"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[104]}
+                                onChange={() => handleToggle(104)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[104] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Money Rain </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-105"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[105]}
+                                onChange={() => handleToggle(105)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[105] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Secret Weapon </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-106"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[106]}
+                                onChange={() => handleToggle(106)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[106] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > The Cannon </InputGroup.Text>
                         </InputGroup>
@@ -1500,120 +1398,111 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-107"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[107]}
+                                onChange={() => handleToggle(107)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[107] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Fine Ride </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-108"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[108]}
+                                onChange={() => handleToggle(108)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[108] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Not So Fast </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-109"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[109]}
+                                onChange={() => handleToggle(109)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[109] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Laissez-faire </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-110"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[110]}
+                                onChange={() => handleToggle(110)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[110] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Parking Pains </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-111"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[111]}
+                                onChange={() => handleToggle(111)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[111] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Car Collection </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-112"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[112]}
+                                onChange={() => handleToggle(112)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[112] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Auto Inspo </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-113"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[113]}
+                                onChange={() => handleToggle(113)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[113] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Le Artist </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-114"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[114]}
+                                onChange={() => handleToggle(114)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[114] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Free Parking </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-115"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[115]}
+                                onChange={() => handleToggle(115)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[115] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
-                            <InputGroup.Text aria-label="Checkbox for following text input" > Free Parking </InputGroup.Text>
+                            <InputGroup.Text aria-label="Checkbox for following text input" > Spot Rebel </InputGroup.Text>
                         </InputGroup>
                     </Accordion.Body>
                 </Accordion.Item>
@@ -1623,118 +1512,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-116"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[116]}
+                                onChange={() => handleToggle(116)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[116] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Something's Missing </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-117"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[117]}
+                                onChange={() => handleToggle(117)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[117] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Train Town </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-118"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[118]}
+                                onChange={() => handleToggle(118)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[118] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Hello There! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-119"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[119]}
+                                onChange={() => handleToggle(119)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[119] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Any Ideas? </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-120"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[120]}
+                                onChange={() => handleToggle(120)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[120] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Traintastic </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-121"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[121]}
+                                onChange={() => handleToggle(121)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[121] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Gimmie! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-122"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[122]}
+                                onChange={() => handleToggle(122)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[122] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Sketch Out </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-123"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[123]}
+                                onChange={() => handleToggle(123)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[123] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Rad Railroads </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-124"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[124]}
+                                onChange={() => handleToggle(124)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[124] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Locomotion </InputGroup.Text>
                         </InputGroup>
@@ -1746,118 +1626,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-125"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[125]}
+                                onChange={() => handleToggle(125)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[125] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Teachable Tokens </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-126"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[126]}
+                                onChange={() => handleToggle(126)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[126] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > All Set! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-127"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[127]}
+                                onChange={() => handleToggle(127)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[127] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Showroom </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-128"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[128]}
+                                onChange={() => handleToggle(128)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[128] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Blueprints </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-129"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[129]}
+                                onChange={() => handleToggle(129)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[129] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Memoir </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-130"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[130]}
+                                onChange={() => handleToggle(130)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[130] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Tradition </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-131"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[131]}
+                                onChange={() => handleToggle(131)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[131] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Dog Model </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-132"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[132]}
+                                onChange={() => handleToggle(132)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[132] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Wonder-fur! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-133"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[133]}
+                                onChange={() => handleToggle(133)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[133] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Soul Mates </InputGroup.Text>
                         </InputGroup>
@@ -1869,118 +1740,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-134"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[134]}
+                                onChange={() => handleToggle(134)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[134] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Grand Opening </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-135"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[135]}
+                                onChange={() => handleToggle(135)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[135] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Get in Line! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-136"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[136]}
+                                onChange={() => handleToggle(136)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[136] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Mr. Mascot </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-137"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[137]}
+                                onChange={() => handleToggle(137)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[137] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Wonder Aisle </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-138"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[138]}
+                                onChange={() => handleToggle(138)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[138] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Pleeease! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-139"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[139]}
+                                onChange={() => handleToggle(139)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[139] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Pay Off </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-140"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[140]}
+                                onChange={() => handleToggle(140)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[140] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Little Break </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-141"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[141]}
+                                onChange={() => handleToggle(141)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[141] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Cha-Ching! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-142"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[142]}
+                                onChange={() => handleToggle(142)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[142] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Happy Shopping </InputGroup.Text>
                         </InputGroup>
@@ -1992,118 +1854,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-145"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[145]}
+                                onChange={() => handleToggle(145)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[145] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Extra, Extra! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-146"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[146]}
+                                onChange={() => handleToggle(146)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[146] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > All Over </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-147"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[147]}
+                                onChange={() => handleToggle(147)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[147] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Up & Up </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-148"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[148]}
+                                onChange={() => handleToggle(148)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[148] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Go Far </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-149"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[149]}
+                                onChange={() => handleToggle(149)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[149] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Late Night Chat </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-150"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[150]}
+                                onChange={() => handleToggle(150)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[150] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Everywhere </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-151"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[151]}
+                                onChange={() => handleToggle(151)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[151] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Good News </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-152"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[152]}
+                                onChange={() => handleToggle(152)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[152] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > On the Rise </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-153"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[153]}
+                                onChange={() => handleToggle(153)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[153] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Sweet Success </InputGroup.Text>
                         </InputGroup>
@@ -2115,118 +1968,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-154"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[154]}
+                                onChange={() => handleToggle(154)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[154] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Born to Chew </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-155"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[155]}
+                                onChange={() => handleToggle(155)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[155] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Pup Genius </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-156"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[156]}
+                                onChange={() => handleToggle(156)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[156] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Printing Prints </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-157"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[157]}
+                                onChange={() => handleToggle(157)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[157] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Final Approval </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-158"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[158]}
+                                onChange={() => handleToggle(158)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[158] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Chance Leap </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-159"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[159]}
+                                onChange={() => handleToggle(159)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[159] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > See Me Rollin' </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-160"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[160]}
+                                onChange={() => handleToggle(160)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[160] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > The Doghouse </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-161"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[161]}
+                                onChange={() => handleToggle(161)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[161] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Big Dog </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-162"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[162]}
+                                onChange={() => handleToggle(162)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[162] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Pooch Perfect </InputGroup.Text>
                         </InputGroup>
@@ -2238,118 +2082,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-163"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[163]}
+                                onChange={() => handleToggle(163)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[163] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Glitz and Glam </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-164"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[164]}
+                                onChange={() => handleToggle(164)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[164] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Game Awards </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-165"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[165]}
+                                onChange={() => handleToggle(165)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[165] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Red Carpet </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-166"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[166]}
+                                onChange={() => handleToggle(166)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[166] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Paparazzi! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-167"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[167]}
+                                onChange={() => handleToggle(167)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[167] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Fingers Crossed </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-168"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[168]}
+                                onChange={() => handleToggle(168)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[168] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > A-Shoo In! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-169"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[169]}
+                                onChange={() => handleToggle(169)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[169] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Special Speech </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-170"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[170]}
+                                onChange={() => handleToggle(170)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[170] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Impressions </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-171"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[171]}
+                                onChange={() => handleToggle(171)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[171] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Photo Op </InputGroup.Text>
                         </InputGroup>
@@ -2361,118 +2196,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-172"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[172]}
+                                onChange={() => handleToggle(172)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[172] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Little Ms. M </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-173"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[173]}
+                                onChange={() => handleToggle(173)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[173] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Tot Tycoon </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-174"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[174]}
+                                onChange={() => handleToggle(174)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[174] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > The Playbook </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-175"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[175]}
+                                onChange={() => handleToggle(175)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[175] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Study Hard </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-176"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[176]}
+                                onChange={() => handleToggle(176)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[176] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Well Done! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-177"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[177]}
+                                onChange={() => handleToggle(177)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[177] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Early Hits </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-178"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[178]}
+                                onChange={() => handleToggle(178)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[178] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Rich List</InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-179"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[179]}
+                                onChange={() => handleToggle(179)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[179] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Play The Game </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-180"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[180]}
+                                onChange={() => handleToggle(180)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[180] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Surprise! </InputGroup.Text>
                         </InputGroup>
@@ -2484,118 +2310,109 @@ function Menu() {
                     <Accordion.Body>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-181"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[181]}
+                                onChange={() => handleToggle(181)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[181] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Eureka! </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-2">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-182"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[182]}
+                                onChange={() => handleToggle(182)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[182] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > The Dream </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-183"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[183]}
+                                onChange={() => handleToggle(183)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[183] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Shared Vision </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-184"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[184]}
+                                onChange={() => handleToggle(184)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[184] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > The Fun Begins </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-185"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[185]}
+                                onChange={() => handleToggle(185)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[185] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Cool Concepts </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-186"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[186]}
+                                onChange={() => handleToggle(186)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[186] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Mug-nificent </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-187"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[187]}
+                                onChange={() => handleToggle(187)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[187] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Behind The Scenes </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-188"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[188]}
+                                onChange={() => handleToggle(188)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[188] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > QA Pals </InputGroup.Text>
                         </InputGroup>
                         <InputGroup className="mb-1">
                             <ToggleButton
-                                id="toggle-check"
+                                id="toggle-check-189"
                                 type="checkbox"
                                 variant="outline-success"
-                                checked={collected}
-                                value={1}
-                                onChange={handleToggle}
+                                checked={buttonStates[189]}
+                                onChange={() => handleToggle(189)}
                             >
-                                {collected ? 'Collected' : 'Not Collected'}
+                                {buttonStates[189] ? 'Collected' : 'Not Collected'}
                             </ToggleButton>
                             <InputGroup.Text aria-label="Checkbox for following text input" > Let's GO! </InputGroup.Text>
                         </InputGroup>
