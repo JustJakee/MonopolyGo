@@ -1,0 +1,23 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-amplifyee70502582c84-staging-24317-authRole",
+      "UnauthRoleArn": "arn:aws:iam::366318196751:role/amplify-amplifyee70502582c84-staging-24317-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::366318196751:role/amplify-amplifyee70502582c84-staging-24317-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-amplifyee70502582c84-staging-24317-deployment",
+      "UnauthRoleName": "amplify-amplifyee70502582c84-staging-24317-unauthRole",
+      "StackName": "amplify-amplifyee70502582c84-staging-24317",
+      "StackId": "arn:aws:cloudformation:us-east-2:366318196751:stack/amplify-amplifyee70502582c84-staging-24317/517dd900-c3d0-11ee-8e3f-0a814c20399b",
+      "AmplifyAppId": "d1fmv43gprkhct"
+    },
+    "categories": {
+      "auth": {
+        "MonopolyGo": {}
+      },
+      "storage": {
+        "s3monopolygostorage4d058f1b": {}
+      }
+    }
+  }
+}

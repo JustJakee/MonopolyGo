@@ -1,0 +1,12 @@
+{
+  "resourceName": "s3monopolygostorage4d058f1b",
+  "bucketName": "monopolygo-storage-4d058f1b",
+  "policyUUID": "68be5935",
+  "storageAccess": "auth",
+  "guestAccess": [],
+  "authAccess": [
+    "CREATE_AND_UPDATE",
+    "READ",
+    "DELETE"
+  ]
+}

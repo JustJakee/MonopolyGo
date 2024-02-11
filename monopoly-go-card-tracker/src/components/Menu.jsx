@@ -1,7 +1,11 @@
 import { useState } from 'react';
 import { Accordion, ProgressBar, InputGroup, ToggleButton, Card } from 'react-bootstrap';
+// ----- Future Imports for DB Integration Below ----
+//import { generateClient } from "aws-amplify/api";
+// import { updateMonopolyUserCards } from './graphql/mutations';
 
 function Menu() {
+    // const client = generateClient()
     const [buttonStates, setButtonStates] = useState(Array(189).fill(false));
     const [progress, setProgress] = useState(0);
 
@@ -10,13 +14,97 @@ function Menu() {
 
     // Example here <ProgressBar now={calculateProgress()} label={`${calculateProgress()}%`} className="ml-auto" />
 
+    // const updatedMonopolyUserCards = await client.graphql({
+    //     query: updateMonopolyUserCards,
+    //     variables: {
+    //         input: {
+    //         "MonopolyUsers": [],
+    //         "MonopoloyCards": []
+    //     }
+    //     }
+    // });
+
+    // const calculateProgress = () => {}
+
+    // setButtonStates(buttonStates.slice(0,9).fill(true));
+
+    const handleSelectAll = (set) => {
+        console.log(set);
+        switch (set) {
+            case 0:
+                setButtonStates(buttonStates.slice(0, 9).fill(true));
+                break;
+            case 1:
+                setButtonStates(buttonStates.slice(9, 18).fill(true));
+                break;
+            case 2:
+                setButtonStates(buttonStates.slice(18, 27).fill(true));
+                break;
+            case 3:
+                setButtonStates(buttonStates.slice(27, 36).fill(true));
+                break;
+            case 4:
+                setButtonStates(buttonStates.slice(36, 45).fill(true));
+                break;
+            case 5:
+                setButtonStates(buttonStates.slice(45, 54).fill(true));
+                break;
+            case 6:
+                setButtonStates(buttonStates.slice(54, 63).fill(true));
+                break;
+            case 7:
+                setButtonStates(buttonStates.slice(63, 72).fill(true));
+                break;
+            case 8:
+                setButtonStates(buttonStates.slice(72, 81).fill(true));
+                break;
+            case 9:
+                setButtonStates(buttonStates.slice(81, 90).fill(true));
+                break;
+            case 10:
+                setButtonStates(buttonStates.slice(90, 99).fill(true));
+                break;
+            case 11:
+                setButtonStates(buttonStates.slice(99, 108).fill(true));
+                break;
+            case 12:
+                setButtonStates(buttonStates.slice(108, 117).fill(true));
+                break;
+            case 13:
+                setButtonStates(buttonStates.slice(117, 126).fill(true));
+                break;
+            case 14:
+                setButtonStates(buttonStates.slice(126, 135).fill(true));
+                break;
+            case 15:
+                setButtonStates(buttonStates.slice(135, 144).fill(true));
+                break;
+            case 16:
+                setButtonStates(buttonStates.slice(144, 153).fill(true));
+                break;
+            case 17:
+                setButtonStates(buttonStates.slice(153, 162).fill(true));
+                break;
+            case 18:
+                setButtonStates(buttonStates.slice(162, 171).fill(true));
+                break;
+            case 19:
+                setButtonStates(buttonStates.slice(171, 180).fill(true));
+                break;
+            case 20:
+                setButtonStates(buttonStates.slice(180, 189).fill(true));
+                break;
+            default:
+                break;
+        }
+    }
 
     const handleToggle = (index) => {
         const newButtonStates = [...buttonStates];
         newButtonStates[index] = !newButtonStates[index];
         setButtonStates(newButtonStates);
+        console.log(newButtonStates)
     };
-    
 
     return (
         <div className="div-menu">
@@ -26,9 +114,22 @@ function Menu() {
                         Best Beginnings
                     </Accordion.Header>
                     <Accordion.Body>
+                        <div className="select">
+                            <ToggleButton
+                                id="select-all-0"
+                                className={'select-all-btn'}
+                                type="checkbox"
+                                variant="primary"
+                                checked={true}
+                                onChange={() => handleSelectAll(0)}
+                            >
+                                Select All
+                            </ToggleButton>
+                        </div>
                         <InputGroup className="mb-2">
                             <ToggleButton
                                 id="toggle-check-0"
+                                className={buttonStates[0] ? 'toggle-checked' : 'toggle-unchecked'}
                                 type="checkbox"
                                 variant="outline-success"
                                 checked={buttonStates[0]}
@@ -41,6 +142,7 @@ function Menu() {
                         <InputGroup className="mb-2">
                             <ToggleButton
                                 id="toggle-check-1"
+                                className={buttonStates[1] ? 'toggle-checked' : 'toggle-unchecked'}
                                 type="checkbox"
                                 variant="outline-success"
                                 checked={buttonStates[1]}
@@ -53,6 +155,7 @@ function Menu() {
                         <InputGroup className="mb-1">
                             <ToggleButton
                                 id="toggle-check-2"
+                                className={buttonStates[2] ? 'toggle-checked' : 'toggle-unchecked'}
                                 type="checkbox"
                                 variant="outline-success"
                                 checked={buttonStates[2]}
@@ -65,6 +168,7 @@ function Menu() {
                         <InputGroup className="mb-1">
                             <ToggleButton
                                 id="toggle-check-3"
+                                className={buttonStates[3] ? 'toggle-checked' : 'toggle-unchecked'}
                                 type="checkbox"
                                 variant="outline-success"
                                 checked={buttonStates[3]}
@@ -77,6 +181,7 @@ function Menu() {
                         <InputGroup className="mb-1">
                             <ToggleButton
                                 id="toggle-check-4"
+                                className={buttonStates[4] ? 'toggle-checked' : 'toggle-unchecked'}
                                 type="checkbox"
                                 variant="outline-success"
                                 checked={buttonStates[4]}
@@ -89,6 +194,7 @@ function Menu() {
                         <InputGroup className="mb-1">
                             <ToggleButton
                                 id="toggle-check-5"
+                                className={buttonStates[5] ? 'toggle-checked' : 'toggle-unchecked'}
                                 type="checkbox"
                                 variant="outline-success"
                                 checked={buttonStates[5]}
@@ -101,6 +207,7 @@ function Menu() {
                         <InputGroup className="mb-1">
                             <ToggleButton
                                 id="toggle-check-6"
+                                className={buttonStates[6] ? 'toggle-checked' : 'toggle-unchecked'}
                                 type="checkbox"
                                 variant="outline-success"
                                 checked={buttonStates[6]}
@@ -113,6 +220,7 @@ function Menu() {
                         <InputGroup className="mb-1">
                             <ToggleButton
                                 id="toggle-check-7"
+                                className={buttonStates[7] ? 'toggle-checked' : 'toggle-unchecked'}
                                 type="checkbox"
                                 variant="outline-success"
                                 checked={buttonStates[7]}
@@ -125,6 +233,7 @@ function Menu() {
                         <InputGroup className="mb-1">
                             <ToggleButton
                                 id="toggle-check-8"
+                                className={buttonStates[8] ? 'toggle-checked' : 'toggle-unchecked'}
                                 type="checkbox"
                                 variant="outline-success"
                                 checked={buttonStates[8]}

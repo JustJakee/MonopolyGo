@@ -1,0 +1,21 @@
+type MonopolyUserCards @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  MonopolyUsers: [MonopolyUser] @manyToMany(relationName: "MonopolyUserCardsMonopolyUser")
+  MonopoloyCards: [MonopoloyCard] @manyToMany(relationName: "MonopolyUserCardsMonopoloyCard")
+}
+
+type MonopolyUser @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  user_name: String!
+  monopolyusercardss: [MonopolyUserCards] @manyToMany(relationName: "MonopolyUserCardsMonopolyUser")
+}
+
+type MonopoloyCard @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  card_name: String!
+  card_image_url: AWSURL
+  card_rarity: Int
+  is_collected: Boolean
+  monopolyusercardss: [MonopolyUserCards] @manyToMany(relationName: "MonopolyUserCardsMonopoloyCard")
+}
+ 

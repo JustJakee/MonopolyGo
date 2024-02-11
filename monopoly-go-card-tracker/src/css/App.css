@@ -53,3 +53,23 @@
   background-color: #2dacde!important;
 }
 
+.select{
+  padding-bottom: 10px;
+  float: left;
+}
+
+.select-all-btn {
+  background-color: green !important; /* Change background color when checked */
+}
+
+.toggle-checked {
+  background-color: green !important; /* Change background color when checked */
+  border-color: green !important; /* Change border color when checked */
+  color: white !important; /* Change text color when checked */
+}
+
+.toggle-unchecked {
+  background-color: grey !important; /* Change background color when unchecked */
+  border-color: grey!important; /* Change border color when unchecked */
+  color: white !important; /* Change text color when unchecked */
+}
