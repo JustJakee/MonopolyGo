@@ -1,10 +1,11 @@
 type MonopolyUser @model @auth(rules: [{allow: public}]) {
   id: ID!
-  card_id: ID!
+  user_email: AWSEmail
+  card_id: Int!
   amount_of: Int
 }
 
 type MonopoloyCard @model @auth(rules: [{allow: public}]) {
   id: ID!
-  card_name: String!
+  card_name: Int!
 }

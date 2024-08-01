@@ -5,18 +5,15 @@
     "serviceName": "AppSync",
     "defaultAuthType": {
       "mode": "API_KEY",
-      "keyDescription": "api key description",
-      "expirationTime": 30
+      "expirationTime": 30,
+      "apiKeyExpirationDate": "2024-08-31T03:56:58.020Z",
+      "keyDescription": "api key description"
     },
     "additionalAuthTypes": [
       {
         "mode": "AWS_IAM"
       }
     ],
-    "conflictResolution": {
-      "defaultResolutionStrategy": {
-        "type": "NONE"
-      }
-    }
+    "conflictResolution": {}
   }
 }
